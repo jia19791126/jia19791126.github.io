@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Sky小天的个人博客</title><meta name="author" content="sky小天"><meta name="copyright" content="sky小天"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Never give up">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sky小天的个人博客">
+<meta property="og:url" content="https://jia19791126.github.io/index.html">
+<meta property="og:site_name" content="Sky小天的个人博客">
+<meta property="og:description" content="Never give up">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jia19791126.github.io/img/ava.jpg">
+<meta property="article:author" content="sky小天">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jia19791126.github.io/img/ava.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jia19791126.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Sky小天的个人博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-10-08 22:53:31'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/friend_404.gif" data-original="/img/ava.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fa fa-folder-open"></i><span> 简历</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/bg.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Sky小天的个人博客"><span class="site-name">Sky小天的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fa fa-folder-open"></i><span> 简历</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Sky小天的个人博客</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/25958.html" title="unity场景加载">unity场景加载</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-27T01:43:42.773Z" title="发表于 2024-09-27 09:43:42">2024-09-27</time></span></div><div class="content">SceneManager场景加载​	需要引入UnityEngine.SceneManagement，其中分为两种方法，使用前需要再unity管理器中的file设置里的BuildSettings中加入需要管理的场景，两种加载方法可以使用下标（即BuildSettings中场景的排布顺序，从0开始），或者使用场景的名称（推荐）。可以通过传入参数LoadSceneMode.Single或者LoadSceneMode.Additive来指定加载方式，前者会卸载当前场景，后者则不会，默认为前者
+同步加载LoadScene​	无返回值，加载过程中可能会出现卡顿，卡顿时间随加载的场景的复杂度而定，一般不推荐使用
+异步加载LoadSceneAsync​	时LoadScene的异步版本，它允许游戏在加载新场景的同时继续运行其他任务。它会返回一个异步操作AsyncOperation，可以对加载的场景进行简单操作。
+​	AsyncOperation带有四个可操作成员变量，主要的有三个：
+1allowSceneActivation bool 类型
+
+是否允许激活当前场景，true为允许，
+1progress  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/41508.html" title="reduce和accumulate函数">reduce和accumulate函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-16T02:44:48.696Z" title="发表于 2024-09-16 10:44:48">2024-09-16</time></span></div><div class="content">accumulate函数被定义在中，第一个作用为累加求和，另一个作用为对自定义类型数据的处理
+累加求和1int sum = accumulate(vec.begin() , vec.end() , 42);  
+
+带有三个参数，前两个形参指定哟啊累加的元素范围，第三个形参则是累加的初值
+accumulate函数将它的一个内部变量设置为指定的初始值，然后在此初值上累加输入范围内所有元素的值。accumulate算法返回累加的结果，其返回类型就是其第三个实参的类型。
+自定义数据类型的处理可以用来直接计算数组或者容器中C++内置数据类型，例如：
+1234#include &lt;numeric&gt;  int arr[]=&#123;10,20,30,40,50&#125;;  vector&lt;int&gt; va(&amp;arr[0],&amp;arr[5]);  int sum=accumulate(va.begin(),va.end(),0);  //sum = 150  
+
+但是对于自定义数据类型，需要自己动手写一个回调函数来实现自定义数据的处理，然后让它作为accumula ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/36329.html" title="Leetocde389：找不同">Leetocde389：找不同</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-12T03:43:23.862Z" title="发表于 2024-09-12 11:43:23">2024-09-12</time></span></div><div class="content">题目给定两个字符串 s 和 t ，它们只包含小写字母。
+字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。
+请找出在 t 中被添加的字母。
+简单解法使用异或，这道题就相当于求某个出现奇数次的数一样，对于两个字符串，只有哪个被添加的字母多出一个，其它字母都出现了偶数次，所以可以使用异或。
+123456789101112class Solution &#123;public:    char findTheDifference(string s, string t) &#123;        int ss = 0;        for(int i=0;i&lt;s.size();i++)        &#123;            ss ^= s[i] ^ t[i];        &#125;        ss ^= t[t.size()-1];        return ss;    &#125;&#125;;
+
+总结对于类似的题求某个奇数或者偶数，以及一些可以转变为类似的题型都可以使用异或的方法来解答
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/34088.html" title="algorithm库函数">algorithm库函数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-07T02:13:25.378Z" title="发表于 2024-09-07 10:13:25">2024-09-07</time></span></div><div class="content">Count函数和Count_if函数参数：使用一对迭代器和一个值做参数
+返回值：Count返回某个值出现的次数
+Count_if返回某个区间中满粗指定条件的元素数目，可以使用谓词
+谓词(predicate)：是做某些检测的函数，返回用于判断的类型，指出条件是否成立
+Reverse函数反转给定范围内的元素顺序
+参数：(ForwardIt first, FowardIt last)左闭右开区间
+ForwardIt为一个模板参数，代表迭代器的类型
+例子：1234567891011121314int main() &#123;      std::vector&lt;int&gt; vec = &#123;1, 2, 3, 4, 5&#125;;        // 使用reverse函数反转vec中的元素      std::reverse(vec.begin(), vec.end());        // 输出反转后的vec      for(int n : vec) &#123;          std::cout &lt;&lt; n &lt;&lt; &#x27; &#x27;; ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/55046.html" title="动态规划">动态规划</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-06T14:17:26.517Z" title="发表于 2024-09-06 22:17:26">2024-09-06</time></span></div><div class="content">动态规划暴力递归转动态规划：
+1.尝试写出递归
+2.记忆化搜索
+3.严格表结构
+某些问题上记忆化搜索和严格表结构的时间复杂度相同
+机器人运动问题：给定一个int参数n代表了n个位置（n大于1），再给一个int参数s代表机器人所在位置看（范围在1到n）int参数e代表机器人要去的最终位置（范围1到n）int参数k表示机器人必须走k步，机器人可往左走或右走，不可停留在原地，从s走到e必须走k步，求有多少种方法
+优化前的递归方法：时间复杂度为O(2^k)
+记忆化搜索优化：寻找可变参数根据可变参数数量制作对应多维数组（或者哈希表）作为缓存结构，初始值为-1
+时间复杂度为O(k*n)
+
+严格表结构优化：根据最初的递归寻找每个位置所依赖的表格位置，例如当k为4，s为2，n为5，e为4时，列出下列表格，行代表剩余步数，列代表所在位置
+
+例题2：给定一个长度为n的正整数数组，数组的每个位置代表该位置硬币的面值，给定一个值aim，求组成这个aim这个值的最少硬币数
+以下为给定例子
+
+递归尝试：
+记忆搜索法：增加缓存
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/14750.html" title="暴力递归">暴力递归</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-06T14:17:11.559Z" title="发表于 2024-09-06 22:17:11">2024-09-06</time></span></div><div class="content">暴力递归
+汉罗塔问题：
+打印一个字符串的全部子序列，包括空字符串字符串中每个字符都会有要和不要两种情况
+
+打印一个字符串的全部排列，要求不要出现重复的排列
+例题1：
+
+逆序一个栈，要求不能使用额外数据结构
+f函数的过程：
+reverse函数过程：
+例题2：
+
+例题3：
+尝试方式，从左往右对于每个物品都是要或者不要，可枚举出所有情况
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/30549.html" title="哈希函数和哈希表">哈希函数和哈希表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-06T14:16:56.299Z" title="发表于 2024-09-06 22:16:56">2024-09-06</time></span></div><div class="content">什么是哈希函数：哈希函数性质：
+1）输入的值是无穷大的，输出的值有限制
+2）相同的输入值必得到相等的输出值
+3）不同的输出也可能得到相同的输出值（被称为哈希碰撞）
+第四条如下：
+
+不管给定多少条数据得到多少条输出值，假如s圈为范围，每一个输入值都相当于在圈内点一个点，当用一个圆随机圈几个时，圆内所包含的点一样
+哈希函数使用：
+给定一组数据，通过f哈希函数计算得到另一组数据，再同时余上m得到第三组数据，若能保证第二组数据在s域上均匀分布，这在0到m-1上也均匀分布
+假设有一个大文件，文件里都是无符号整数（范围0到2^32-1），大文件总共有40亿个，给你1g的内存，给定返回出现数次数最多的是哪个
+
+将所有得数经过哈希函数变换之后，余上100将所有的数的范围控制在0到100之间，再存入哈希表，出现次数最多的就是
+哈希表的实现：基于哈希函数
+当某个值后面挂的链表超过一定的长度时，根据哈希函数的性质可以确定其它链的长度接近这个值，这是进行扩容，防止之后查询时间过长
+每次扩容代驾：若已加入n个字符串，这是经历了logn次，增加n个，代价为o（n*logn）
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/7495.html" title="前缀树，贪心算法和N皇后">前缀树，贪心算法和N皇后</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-06T14:16:11.878Z" title="发表于 2024-09-06 22:16:11">2024-09-06</time></span></div><div class="content">前缀树
+前缀树的点的数据结构：
+pass：记录创建前缀树时，该节点被经过多少次
+end：记录该节点是多少个字符串的结尾
+nexts：记录有多少条路从该节点出发
+
+
+
+查询该字符串加入过几次：
+查询加入的字符串中，有几个是以pre这个字符串为前缀的：
+删除某个字符串：
+
+贪心算法：
+例题1：
+按照时间结束早的会议先安排
+
+字典序：将两个字符串按照字典（并非数据结构，为现实中的字典）的顺序排列
+给定一个字符串数组，使其按照某种顺序拼接后使其字典序最小，使用的贪心策略为：两个字符串a，b，若ab结合字典序小于等于ba结合则a放前，否则b放前
+
+例题2：
+使用哈夫曼编码
+哈夫曼编码：
+如上图，给定一个数组，将所有树压入，小根堆，1）弹出两个数，结合存入cur中，2）将结合后的数压入小根堆，重复1）2）直至小根堆中只剩一个数为止，便可得到最小代价
+代码实现：
+
+例题3：
+
+
+N皇后问题：
+
+
+
+时间复杂度为O(N^N)，可以进行常数级别上的优化（使用位运算来加速）
+优化后
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/47098.html" title="图">图</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-06T14:15:44.868Z" title="发表于 2024-09-06 22:15:44">2024-09-06</time></span></div><div class="content">图的表达
+邻接表表达方式
+存储方式：有一张表，从第一行开始先存A的直接邻居（C，D）第二行存B的直接邻居，依次存玩每个点（存放有权值的图，只需在表中对应位置加个数据项用来存放权值即可）
+邻接矩阵表达方法：
+一个二维数组每一行代表每一个点，每一列也代表每一个点，根据图将点到点之间的距离存入对应位置，无法到达存无穷
+使用点集和边集表达图
+nodes：表示点集。edges：表示边集
+
+in：表示入度。on：表示出度。next：表示从该点出发所指向的点。edges：表示属于该点的边
+
+weight：表示权重。from：表示从哪个点出发。to：表示指向哪个点
+入度：代表有多少个边指向这个点
+出度：代表这个点指向多少个点
+无向图的出度和入度想等
+图的表达方式的转化（将给定的表达方式转换成熟悉的表达方式）
+例如给定以上图所示的表达方式每行表示权值，起始点，终点
+
+代码所示的每行为起始点，终点，权值
+
+宽度优先遍历：
+从A开始先存入队列和set中（set用于存放被处理过的点，防止无限循环）1）若队列不为空从中弹出一个数并做相应处理，2）遍历弹出的点的直接邻居若不在set中存入队列和set重复1）2）操 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/23384.html" title="树">树</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-06T14:15:31.431Z" title="发表于 2024-09-06 22:15:31">2024-09-06</time></span></div><div class="content">
+先序遍历：对于每一个子树，先输出头节 点，再输出左节点，最后输出右节点
+中序遍历：对于每一个子树，先输出左节点，再输出头结点，最后输出右节点
+后序遍历：对于每一个子树，先输出左节点，再输出右节点，最后输出头结点
+递归实现，主要是输出value语句的放置地方不一样，放在遍历左右子树之前为先序，放在中间为中序，放在后面为后序
+不使用递归实现：先序遍历：
+创建一个栈，按照图中1）2）3）4）顺序运行
+
+后序遍历：
+创建两个栈，按照1）2）3）顺序重复执行，打印收集栈
+
+中序遍历：
+创建一个栈，把每棵子树整颗树的左边界进栈，依次弹出过程中打印，若有右节树存入栈重复
+
+深度优先遍历：就是二叉树的先序遍历
+宽度优先遍历：非递归写法：创建一个队列，先把头结点放入队列，1）弹出并打印，2）先存左节点再存右节点为空不放，重复1）2）
+
+计算树的宽度：
+准备一个队列和一个map先把头结点放入，map中存节点以及节点所在层数，在代码while后面加一个return Math.max(max, CurLevelNodes)
+不使用哈希表（map）：
+一个队列，两个node类型的指针，存当前层最后一个节点，一 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/friend_404.gif" data-original="/img/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sky小天</div><div class="author-info__description">Never give up</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jia19791126"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/25958.html" title="unity场景加载">unity场景加载</a><time datetime="2024-09-27T01:43:42.773Z" title="发表于 2024-09-27 09:43:42">2024-09-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/41508.html" title="reduce和accumulate函数">reduce和accumulate函数</a><time datetime="2024-09-16T02:44:48.696Z" title="发表于 2024-09-16 10:44:48">2024-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/36329.html" title="Leetocde389：找不同">Leetocde389：找不同</a><time datetime="2024-09-12T03:43:23.862Z" title="发表于 2024-09-12 11:43:23">2024-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/34088.html" title="algorithm库函数">algorithm库函数</a><time datetime="2024-09-07T02:13:25.378Z" title="发表于 2024-09-07 10:13:25">2024-09-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/55046.html" title="动态规划">动态规划</a><time datetime="2024-09-06T14:17:26.517Z" title="发表于 2024-09-06 22:17:26">2024-09-06</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">14</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">14</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-08T14:53:31.508Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By sky小天</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, ))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["你在抱怨什么呢","为明天到来的事，说人生像是没有意义","没有选择会是唯一的路","这不是你自己的问题，人终归要好好去生活"])
+  } else {
+    document.getElementById("subtitle").textContent = "你在抱怨什么呢"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>

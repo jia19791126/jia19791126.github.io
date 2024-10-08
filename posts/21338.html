@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>算法基础及排序 | Sky小天的个人博客</title><meta name="author" content="sky小天"><meta name="copyright" content="sky小天"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="对数器： 用于测试一个方法是否正确（使用一个速记数据生成器生成数据，将数据带入方法测试，以及一个简单的，不管时间复杂度的，正确的，功能一样的方法中得出结果并比较） 递归： master公式：用于求子问题为等规模的递归的时间复杂度 T(N)为母问题规模 T(N&#x2F;b)为子问题的规模，a为子问题被调用次数 O(N^d)除调用子问题之外的进程的时间复杂度 归并排序：整体为一个递归排序，左右独立有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法基础及排序">
+<meta property="og:url" content="https://jia19791126.github.io/posts/21338.html">
+<meta property="og:site_name" content="Sky小天的个人博客">
+<meta property="og:description" content="对数器： 用于测试一个方法是否正确（使用一个速记数据生成器生成数据，将数据带入方法测试，以及一个简单的，不管时间复杂度的，正确的，功能一样的方法中得出结果并比较） 递归： master公式：用于求子问题为等规模的递归的时间复杂度 T(N)为母问题规模 T(N&#x2F;b)为子问题的规模，a为子问题被调用次数 O(N^d)除调用子问题之外的进程的时间复杂度 归并排序：整体为一个递归排序，左右独立有">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jia19791126.github.io/img/ava.jpg">
+<meta property="article:published_time" content="2024-09-06T14:14:54.466Z">
+<meta property="article:modified_time" content="2024-09-30T09:39:51.761Z">
+<meta property="article:author" content="sky小天">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jia19791126.github.io/img/ava.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jia19791126.github.io/posts/21338.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '算法基础及排序',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-30 17:39:51'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/friend_404.gif" data-original="/img/ava.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fa fa-folder-open"></i><span> 简历</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Sky小天的个人博客"><span class="site-name">Sky小天的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fa fa-folder-open"></i><span> 简历</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">算法基础及排序</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-09-06T14:14:54.466Z" title="发表于 2024-09-06 22:14:54">2024-09-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-30T09:39:51.761Z" title="更新于 2024-09-30 17:39:51">2024-09-30</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法基础及排序"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="对数器："><a href="#对数器：" class="headerlink" title="对数器："></a>对数器：</h2><p><img src="/img/friend_404.gif" data-original="/images/Base/1.png"></p>
+<p>用于测试一个方法是否正确（使用一个速记数据生成器生成数据，将数据带入方法测试，以及一个简单的，不管时间复杂度的，正确的，功能一样的方法中得出结果并比较）</p>
+<h2 id="递归："><a href="#递归：" class="headerlink" title="递归："></a>递归：</h2><p><img src="/img/friend_404.gif" data-original="/images/Base/2.jpg"></p>
+<h3 id="master公式："><a href="#master公式：" class="headerlink" title="master公式："></a>master公式：</h3><p>用于求子问题为等规模的递归的时间复杂度</p>
+<p>T(N)为母问题规模</p>
+<p>T(N&#x2F;b)为子问题的规模，a为子问题被调用次数</p>
+<p>O(N^d)除调用子问题之外的进程的时间复杂度</p>
+<h2 id="归并排序："><a href="#归并排序：" class="headerlink" title="归并排序："></a>归并排序：</h2><p>整体为一个递归排序，左右独立有序，再让其整体有序，整体有序国产过程中使用了外排序方法</p>
+<p>时间复杂度为O(N*log N)，空间复杂度为O(n)</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/3.jpg"></p>
+<h3 id="求小和："><a href="#求小和：" class="headerlink" title="求小和："></a>求小和：</h3><p>求数组中各个数的左边比它小的数的和</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/4.jpg"></p>
+<p>利用归并排序求小和，但是在比较合并时若右边的数小于等于左边的数，则先存右边数组的数</p>
+<h3 id="逆序对："><a href="#逆序对：" class="headerlink" title="逆序对："></a>逆序对：</h3><p>在一个数组中，若一个数比其右边的数大（两数不一定相邻），则组成一个逆序对</p>
+<h2 id="快速排序："><a href="#快速排序：" class="headerlink" title="快速排序："></a>快速排序：</h2><h3 id="荷兰国旗问题："><a href="#荷兰国旗问题：" class="headerlink" title="荷兰国旗问题："></a>荷兰国旗问题：</h3><p>一个数组，对于一个给定的值，小于这个值的数放到数组左边，等于这个值的数放到数组中间，大于这个值的数放到数组右边</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/5.jpg"></p>
+<p>快排1.0：使用数组中最后一个数将数组大于其的数放在数组右边，小于等于的数放在左边，两边进递归，时间复杂度O(n^2)</p>
+<p>快排2.0：使用已知数组中最后一个数将大于其的数放在数组右边，等于的数放在中间，小于的数放在左边，大于和小于的数进递归,时间复杂度O(n^2)</p>
+<p>快排3.0：在已知数组中随机选一个数，进行划分排序，时间复杂度为O(n*logn)</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/6.jpg"></p>
+<h2 id="堆："><a href="#堆：" class="headerlink" title="堆："></a>堆：</h2><p><img src="/img/friend_404.gif" data-original="/images/Base/7.jpg"></p>
+<p>size为堆的长度而非数组长度</p>
+<h3 id="大根堆："><a href="#大根堆：" class="headerlink" title="大根堆："></a>大根堆：</h3><p>堆的根节点为所有节点中的最大的数</p>
+<h3 id="小根堆："><a href="#小根堆：" class="headerlink" title="小根堆："></a>小根堆：</h3><p>堆的根节点为所有节点中的最小的数</p>
+<h3 id="创建大根堆："><a href="#创建大根堆：" class="headerlink" title="创建大根堆："></a>创建大根堆：</h3><p><img src="/img/friend_404.gif" data-original="/images/Base/8.jpg"></p>
+<p>对于大根堆，插入一个值调整代价O(logN)</p>
+<p>对于大根堆，若去除最大值之后其余数继续成堆，将堆中最后一个数放于堆的跟，之后令根的左右孩子与根比较，交换完后若其还有子孩子，再继续比较，直到不符合条件（调整代价O(logN)）</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/9.jpg"></p>
+<p>index代表从那个位置开始下移</p>
+<p>对于大根堆，若随即更改其中一个值，若该值变大则heepInsert上移，反之则heepify下移</p>
+<p>调整代价O(logN)</p>
+<h3 id="堆排序："><a href="#堆排序：" class="headerlink" title="堆排序："></a>堆排序：</h3><p><img src="/img/friend_404.gif" data-original="/images/Base/10.jpg"></p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/11.jpg"></p>
+<p>让根与堆中最后一个数做交换，并且heapsize-1，之后对新的根进行heapify下移，之后重复操作，时间复杂度为O(NlogN),额外空间复杂度O(1)（第二张图为更优的建立大根堆方法，可替换第一张图中的for循环）</p>
+<p>形成大根堆，可以一个一个加进去，进行heapinsert操作，也可以从下往上，从右往左做heapify操作，后者比前者优，后者复杂度计算：</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/12.jpg"></p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/13.jpg"></p>
+<h4 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h4><p><img src="/img/friend_404.gif" data-original="/images/Base/14.jpg"></p>
+<p>可以使用小根堆，取前k+1个数存入小根堆，之后弹出堆根的数，并向后取一个数加入小根堆，直至排序完毕，时间复杂度为O(N*logK)当K相对于数组长度很小，可以认为时间复杂度为O(N)</p>
+<h3 id="堆结构注意点："><a href="#堆结构注意点：" class="headerlink" title="堆结构注意点："></a>堆结构注意点：</h3><p>1.对于堆结构，当容量不够时，就成倍扩容，扩容次数为logN，每次扩容代价O(N)，所以总的代价为O(N*logN)，均摊到每次后代价为O(N)</p>
+<p>2.使用系统给的堆结构时，与其沟通方式为add或者poll，若想改变其中一个，代价会很大，若想要对已形成的堆结构中某个数进行操作时，不能使用系统给的堆，需要自己手写</p>
+<h2 id="比较器："><a href="#比较器：" class="headerlink" title="比较器："></a>比较器：</h2><p><img src="/img/friend_404.gif" data-original="/images/Base/15.jpg"></p>
+<p>对于自己定义的结构，使用系统给的排序函数，无法进行排序，学要自己写下排序的方法，比较器在c++中为重载比较运算符（注释里为书写比较器的规则）</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/16.jpg"></p>
+<p>写完比较器，使用系统的排序方法时，把比较器作为参数传过去</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/17.jpg"></p>
+<p>比较器还可以用在有序的结构里，如：大根堆，小根堆</p>
+<p>在此之前的排序均为基于比较排序</p>
+<h2 id="不基于比较的排序（根据数据状况做排序）："><a href="#不基于比较的排序（根据数据状况做排序）：" class="headerlink" title="不基于比较的排序（根据数据状况做排序）："></a>不基于比较的排序（根据数据状况做排序）：</h2><p><img src="/img/friend_404.gif" data-original="/images/Base/18.jpg"></p>
+<h3 id="计数排序："><a href="#计数排序：" class="headerlink" title="计数排序："></a>计数排序：</h3><p><img src="/img/friend_404.gif" data-original="/images/Base/19.jpg"></p>
+<p>记录每个数的出现次数与该数，时间复杂度为O(N)，此排序仅限于出现的数有一定的范围</p>
+<h3 id="基数排序（桶排序）"><a href="#基数排序（桶排序）" class="headerlink" title="基数排序（桶排序）"></a>基数排序（桶排序）</h3><p>对于一个数组，确定其中数的最高位，准备10个容器看（编号为0-9）即桶（一般是队列，也可以是栈，数组）从最低位开始一直到最高位，根据该位上个数的数字，放进对应的容器里，结束后根据容器编号从0到9依次将容器里的数放到数组中</p>
+<h3 id="基数排序（优化后，思想不变）"><a href="#基数排序（优化后，思想不变）" class="headerlink" title="基数排序（优化后，思想不变）"></a>基数排序（优化后，思想不变）</h3><p><img src="/img/friend_404.gif" data-original="/images/Base/20.jpg"></p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/21.jpg"></p>
+<p>创建一个与原数组等长的容器help，创建一个10长度的count数组代替原来的10个容器，使用计数排序的思想，从低位到高位，依次记住出现的频次并依次相加存放，让其变为前缀和数组（此处指的是count数组）原数组从右到左依次片段对应位上出现的数在count作相应查找并存放到help数组的对应位置</p>
+<p>count数组，对于i位置上的水k含义为：原数组中对应十进制位上小于等于i的数的数量</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/22.jpg"></p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/23.jpg"></p>
+<p>代码实现：</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/24.jpg"></p>
+<h2 id="排序算法总结："><a href="#排序算法总结：" class="headerlink" title="排序算法总结："></a>排序算法总结：</h2><p>稳定性指的是相同值的数排完之后还能保证原来的相对次序不变</p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/25.jpg"></p>
+<p>一般排序选择快排，空间复杂度超出堆排就用，需要稳定就用归并</p>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>基于比较的排序暂时无法做到时间复杂度低于O(N*logN)</p>
+<p>基于比较的排序暂时无法做到在空间复杂度低于O(N)的情况下做到稳定</p>
+<h3 id="常见的坑："><a href="#常见的坑：" class="headerlink" title="常见的坑："></a>常见的坑：</h3><p><img src="/img/friend_404.gif" data-original="/images/Base/26.jpg"></p>
+<p><img src="/img/friend_404.gif" data-original="/images/Base/27.jpg"></p>
+<h2 id="综合排序："><a href="#综合排序：" class="headerlink" title="综合排序："></a>综合排序：</h2><p>在样本量大的时候使用快排在调度上时间复杂度低的优势，在小样本情况使用插入的常数极小的优势</p>
+<p>对于系统给的arr的sort方法，为什么对于基础类型使用快排，自定义类型使用归并？</p>
+<p>因为对于基础数据类型，稳定行没有必要，所以使用常数更小的快排，但是对于自定义类型，系统不知道稳定性是否有用，所以会使用归并</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://jia19791126.github.io">sky小天</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jia19791126.github.io/posts/21338.html">https://jia19791126.github.io/posts/21338.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jia19791126.github.io" target="_blank">Sky小天的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/ava.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/54862.html" title="链表"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">链表</div></div></a></div><div class="next-post pull-right"><a href="/posts/62010.html" title="C++STL库学习记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++STL库学习记录</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/friend_404.gif" data-original="/img/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sky小天</div><div class="author-info__description">Never give up</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jia19791126"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E5%99%A8%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">对数器：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">递归：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#master%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">master公式：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">归并排序：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%B0%8F%E5%92%8C%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">求小和：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%86%E5%BA%8F%E5%AF%B9%EF%BC%9A"><span class="toc-number">3.2.</span> <span class="toc-text">逆序对：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">快速排序：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">荷兰国旗问题：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">堆：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A0%B9%E5%A0%86%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">大根堆：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%A0%B9%E5%A0%86%EF%BC%9A"><span class="toc-number">5.2.</span> <span class="toc-text">小根堆：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%A7%E6%A0%B9%E5%A0%86%EF%BC%9A"><span class="toc-number">5.3.</span> <span class="toc-text">创建大根堆：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-number">5.4.</span> <span class="toc-text">堆排序：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A"><span class="toc-number">5.4.1.</span> <span class="toc-text">例题：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E7%BB%93%E6%9E%84%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%9A"><span class="toc-number">5.5.</span> <span class="toc-text">堆结构注意点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%99%A8%EF%BC%9A"><span class="toc-number">6.</span> <span class="toc-text">比较器：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%9F%BA%E4%BA%8E%E6%AF%94%E8%BE%83%E7%9A%84%E6%8E%92%E5%BA%8F%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%95%B0%E6%8D%AE%E7%8A%B6%E5%86%B5%E5%81%9A%E6%8E%92%E5%BA%8F%EF%BC%89%EF%BC%9A"><span class="toc-number">7.</span> <span class="toc-text">不基于比较的排序（根据数据状况做排序）：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-number">7.1.</span> <span class="toc-text">计数排序：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%EF%BC%88%E6%A1%B6%E6%8E%92%E5%BA%8F%EF%BC%89"><span class="toc-number">7.2.</span> <span class="toc-text">基数排序（桶排序）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%EF%BC%88%E4%BC%98%E5%8C%96%E5%90%8E%EF%BC%8C%E6%80%9D%E6%83%B3%E4%B8%8D%E5%8F%98%EF%BC%89"><span class="toc-number">7.3.</span> <span class="toc-text">基数排序（优化后，思想不变）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">8.</span> <span class="toc-text">排序算法总结：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="toc-number">8.1.</span> <span class="toc-text">注意：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9D%91%EF%BC%9A"><span class="toc-number">8.2.</span> <span class="toc-text">常见的坑：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-number">9.</span> <span class="toc-text">综合排序：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/25958.html" title="unity场景加载">unity场景加载</a><time datetime="2024-09-27T01:43:42.773Z" title="发表于 2024-09-27 09:43:42">2024-09-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/41508.html" title="reduce和accumulate函数">reduce和accumulate函数</a><time datetime="2024-09-16T02:44:48.696Z" title="发表于 2024-09-16 10:44:48">2024-09-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/36329.html" title="Leetocde389：找不同">Leetocde389：找不同</a><time datetime="2024-09-12T03:43:23.862Z" title="发表于 2024-09-12 11:43:23">2024-09-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/34088.html" title="algorithm库函数">algorithm库函数</a><time datetime="2024-09-07T02:13:25.378Z" title="发表于 2024-09-07 10:13:25">2024-09-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/55046.html" title="动态规划">动态规划</a><time datetime="2024-09-06T14:17:26.517Z" title="发表于 2024-09-06 22:17:26">2024-09-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By sky小天</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>
