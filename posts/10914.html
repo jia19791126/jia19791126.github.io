@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>comfyUI-AI绘画 | Sky小天的个人博客</title><meta name="author" content="sky小天"><meta name="copyright" content="sky小天"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基本操作​		左键拖动，滚轮放大缩小，右键空白处可以呼出节点的菜单栏，从这里可以添加想要的节点。双击空白处，可以搜索节点并添加。搜索节点时要区分是否由空格，不然搜索出来的节点可能和想象中的不一样，例如加载图像这个节点如果搜索load image则并不会显示加载图像节点这个选项，并需要用loadimage搜索才可以。 123456789101112Ctrl + Enter  		快速生成当前图形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="comfyUI-AI绘画">
+<meta property="og:url" content="https://jia19791126.github.io/posts/10914.html">
+<meta property="og:site_name" content="Sky小天的个人博客">
+<meta property="og:description" content="基本操作​		左键拖动，滚轮放大缩小，右键空白处可以呼出节点的菜单栏，从这里可以添加想要的节点。双击空白处，可以搜索节点并添加。搜索节点时要区分是否由空格，不然搜索出来的节点可能和想象中的不一样，例如加载图像这个节点如果搜索load image则并不会显示加载图像节点这个选项，并需要用loadimage搜索才可以。 123456789101112Ctrl + Enter  		快速生成当前图形">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jia19791126.github.io/img/ava.jpg">
+<meta property="article:published_time" content="2024-11-20T08:50:23.578Z">
+<meta property="article:modified_time" content="2024-11-20T10:31:15.996Z">
+<meta property="article:author" content="sky小天">
+<meta property="article:tag" content="AI">
+<meta property="article:tag" content="绘画">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jia19791126.github.io/img/ava.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jia19791126.github.io/posts/10914.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'comfyUI-AI绘画',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-20 18:31:15'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/friend_404.gif" data-original="/img/ava.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fa fa-folder-open"></i><span> 简历</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Sky小天的个人博客"><span class="site-name">Sky小天的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/cv/"><i class="fa-fw fa fa-folder-open"></i><span> 简历</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">comfyUI-AI绘画</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-20T08:50:23.578Z" title="发表于 2024-11-20 16:50:23">2024-11-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-20T10:31:15.996Z" title="更新于 2024-11-20 18:31:15">2024-11-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BB%98%E7%94%BB/">绘画</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="comfyUI-AI绘画"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><meta name="referrer" content="no-referrer" />
+
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><p>​		左键拖动，滚轮放大缩小，右键空白处可以呼出节点的菜单栏，从这里可以添加想要的节点。双击空白处，可以搜索节点并添加。搜索节点时要区分是否由空格，不然搜索出来的节点可能和想象中的不一样，例如加载图像这个节点如果搜索load image则并不会显示加载图像节点这个选项，并需要用loadimage搜索才可以。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + Enter  		快速生成当前图形</span><br><span class="line">Ctrl + 鼠标左键  		框选多个节点</span><br><span class="line">Shift + 鼠标左键  		移动框选的多个节点（直接点左键移动，指挥移动当前一个）</span><br><span class="line">Ctrl + O  		加载工作流程</span><br><span class="line">Alt +C  		折叠/取消折叠选定节点</span><br><span class="line">Ctrl + B  		绕过选定的节点(就像从图中移除节点，然后重新连接线一样)</span><br><span class="line">Ctrl + Delete/Backspace  		删除当前图形</span><br><span class="line">Ctrl+C/Ctrl+V  		复制和粘贴选定的节点(不维护与未选定节点输出的连接)</span><br><span class="line">Ctrl+C/Ctrl+Shift+V  		复制和粘贴选定节点(维护从未选定节点的输出到粘贴节点的输入的连接)</span><br><span class="line">Ctrl + D  		加载默认图形</span><br><span class="line">Q  		切换队列的可见性</span><br><span class="line">H  		切换历史的可见性</span><br></pre></td></tr></table></figure>
+
+<h1 id="基本节点介绍"><a href="#基本节点介绍" class="headerlink" title="基本节点介绍"></a>基本节点介绍</h1><p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201705543.png"></p>
+<p>​		Checkpoint加载器，用于加载扩散模型既大模型，该节点的输出从上到下分别为模型，CLIP和VAE</p>
+<p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201709580.png"></p>
+<p>​		CLIP文本编码器，接受CLIP输出条件，CLIP既是一种多模态预训练神经网络模型，主要用于理解输入的语句。</p>
+<p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201712291.png"></p>
+<p>​		K采样器，输入从上到下分别为，模型，正面条件，负面条件和Latent，正反条件分别连接两个CLIP文本编译器。模型连接着Checkpoint加载器，Lantent则连接一个Empty Latent Image。</p>
+<p>正面提示词：<br>        指用户希望在生成的图像中出现的元素或特征。它们可以是具体的对象、场景描述、颜色、风格、情感氛围等。例如，如果想要一张“穿着中世纪服装的女性站在城堡前”的图像，那么你的正面提示词可能包括“中世纪服装”、“女性”、“城堡”等关键词。</p>
+<p>负面提示词：</p>
+<p>​		是指用户不希望在生成的图像中出现的元素或特征。这可以用来排除一些不想要的对象、风格、颜色或其他属性。例如，在上面的例子中，如果用户不希望图像中有任何现代元素，便可能会使用“无现代元素”作为负面提示词。</p>
+<p>​		seed ： 随即值也成为种子值，每张图都有其自己的种子值。</p>
+<p>​		control_after_generate ：运行后操作，点开后，从上到下的选项分别为固定，增加，减少，随机。主要影响的时种子值。</p>
+<p>​		steps ：采样步数，数值越大所需运行时间越长，一般在20到30之间。</p>
+<p>​		cfg ：提示词引导系数，cfg值越高，则图像与提示词越吻合，值越低，则提示词对生成结果的形象越小，但是过高或者过低的提示词都会给图片带来不好的影响。所以一般将cfg值保持在5到8之间。</p>
+<p>​		sampler_name ：采样器，图片的处理方式，一般选择Dpmpp_2m或者Dpmpp_2m_sde.</p>
+<p>​		scheduler ：调度器，图片的处理方式，一般选择karras。</p>
+<p>​		denoise ：降噪参数，该参数与图层有关系。</p>
+<p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201715863.png"></p>
+<p>​		空Laten的内容从上到下分别为宽，高和批次大小，宽和高决定最终图像生成的尺寸，而批次大小地表每次生成的图的数量。</p>
+<p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201731910.png"></p>
+<p>​		VAE解码，输入从上到下分别为Latent，VAE。</p>
+<p>​		VAE：变分自编码器，属于深度学习模型，主要用于无监督学习任务，而其在ComfyUI中的作用为，将潜空间图像解码成像素空间图像。或是将像素空间图像编码成潜空间图像。</p>
+<h1 id="ComfyUI管理器"><a href="#ComfyUI管理器" class="headerlink" title="ComfyUI管理器"></a>ComfyUI管理器</h1><p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201743777.png"></p>
+<p>​		这是ComfyUI中非常重要的部分，其中第二列的第一个Custom Nodes Manager可以添加非官方节点。此功能在ComfyUI使用过程中会被频繁使用。</p>
+<p>​		Model Manager可以安装任何一个想要的模型。</p>
+<p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201745769.png"></p>
+<p>​		此图片便是Custom Nodes Manager的UI，里面由着很多好用的节点。</p>
+<h1 id="提示词语法"><a href="#提示词语法" class="headerlink" title="提示词语法"></a>提示词语法</h1><p>​		输入的内容只能是英文和英文的标点符号，否则会发生报错。</p>
+<h2 id="权重"><a href="#权重" class="headerlink" title="权重"></a>权重</h2><h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>​		提示词中各个描述此的权重不同，会影响生成图片时，图片内容的侧重点不同，比如以下举例：</p>
+<p><img src="/img/friend_404.gif" data-original="https://gitee.com/skyxtwd/cloud-images/raw/master/images/202411201800859.png"></p>
+<p>​		这两张图片的提示词都为1girl和garden，但是左边这张1girl的权重为1.2，garden的权重0.8，右边这张图则相反，所以造成最终图片的内容所想要呈现的内容会有区分。</p>
+<h3 id="权重的控制"><a href="#权重的控制" class="headerlink" title="权重的控制"></a>权重的控制</h3><p>​		一般语法：(提示词:数值)其中数值为1时代表正常的权重就和不适用权重的控制符时一样。</p>
+<p>​		中括号：[Cat]就代表Cat的权重为0.9，所以添加[]就代表0.9倍的权重。</p>
+<p>​		小括号：(Cat)就代表Cat的权重为1.1，所以添加()就代表1.1倍的权重。</p>
+<p>​		大括号：{Cat}就代表Cat的权重为1.05，所以添加()就代表1.05倍的权重。</p>
+<p>​		这些权重的控制符号之间可以相互嵌套：例如[[Cat]]就代表Cat的权重变为原来的0.81倍。同样的((Cat))就代表Cat的权重便为原来的1.21倍。</p>
+<p>​		权重调整的快捷键：当光标停留在所需要调整权重的提示词上时，Ctrl + ↑调大权重，Ctrl + ↓调小权重，每次权重的调整的数值为0.05.</p>
+<p>​		其中权重可以过低(可以达到0.1)，但是不可以过高(不可以达到2.0或者更高)，全中国过高时会导致生成的图片的变形。</p>
+<h2 id="短句和长句"><a href="#短句和长句" class="headerlink" title="短句和长句"></a>短句和长句</h2><p>​		在写提示词时可以使用一个长句也可以使用一个一个的词，这两种所带来的效果是一样，而后者则会更好用，其更方便的去调整每个词的权重，以便来带到更好的效果。</p>
+<p>​		正面提示词的数量尽量不要过多，过多的提示词可能会导致图片的变形，正面提示词的数量控制在75个以内最好，反向提示词也一样。</p>
+<p>​		在正面提示词中输入4K，masterpiece会使图像更加精美。</p>
+<h2 id="提示词顺序"><a href="#提示词顺序" class="headerlink" title="提示词顺序"></a>提示词顺序</h2><p>​		提示词越靠前，其所代表的权重也会越高，所以一般建议以以下顺序来写提示词</p>
+<p>​		1.画质词&#x2F;画风词</p>
+<p>​		2.主体</p>
+<p>​		3.环境&#x2F;场景&#x2F;构图</p>
+<p>​		4.可以在最后添加想要加的lora</p>
+<h2 id="提示词污染"><a href="#提示词污染" class="headerlink" title="提示词污染"></a>提示词污染</h2><p>​		主要是，在书写多个提示词的情况下，各个提示词之间的意思可能会相互渗透，为了避免此情况，可以使用break来分割。</p>
+<h2 id="提示词融合"><a href="#提示词融合" class="headerlink" title="提示词融合"></a>提示词融合</h2><p>​		AND和_，可以将两个提示词融合起来，例如cat1,girl生成的是一只猫和一为女孩，而使用cat AND 1girl时，则生成的时猫娘，使用下滑线cat_girl也一样，也可以使用[cat|1girl]达到相同的效果</p>
+<h2 id="控制生成的时间段"><a href="#控制生成的时间段" class="headerlink" title="控制生成的时间段"></a>控制生成的时间段</h2><p>​		在采样步数为20的时候，我们想让前30%去画森林，之后70%去画女孩，可以使用{forest:1girl:0.3}来表示，就可以带到让其前30%去画森林，后70%去画女孩的效果。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://jia19791126.github.io">sky小天</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jia19791126.github.io/posts/10914.html">https://jia19791126.github.io/posts/10914.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jia19791126.github.io" target="_blank">Sky小天的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AI/">AI</a><a class="post-meta__tags" href="/tags/%E7%BB%98%E7%94%BB/">绘画</a></div><div class="post_share"><div class="social-share" data-image="/img/ava.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/14932.html" title="Unity Shader-卡通效果"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity Shader-卡通效果</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/15378.html" title="unity寻路算法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-29</div><div class="title">unity寻路算法</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/friend_404.gif" data-original="/img/ava.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sky小天</div><div class="author-info__description">Never give up</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jia19791126"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%8A%82%E7%82%B9%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">基本节点介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ComfyUI%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">ComfyUI管理器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%AF%AD%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">提示词语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%87%8D"><span class="toc-number">4.1.</span> <span class="toc-text">权重</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-number">4.1.1.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%87%8D%E7%9A%84%E6%8E%A7%E5%88%B6"><span class="toc-number">4.1.2.</span> <span class="toc-text">权重的控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%AD%E5%8F%A5%E5%92%8C%E9%95%BF%E5%8F%A5"><span class="toc-number">4.2.</span> <span class="toc-text">短句和长句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D%E9%A1%BA%E5%BA%8F"><span class="toc-number">4.3.</span> <span class="toc-text">提示词顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B1%A1%E6%9F%93"><span class="toc-number">4.4.</span> <span class="toc-text">提示词污染</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%E8%AF%8D%E8%9E%8D%E5%90%88"><span class="toc-number">4.5.</span> <span class="toc-text">提示词融合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E7%94%9F%E6%88%90%E7%9A%84%E6%97%B6%E9%97%B4%E6%AE%B5"><span class="toc-number">4.6.</span> <span class="toc-text">控制生成的时间段</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/10914.html" title="comfyUI-AI绘画">comfyUI-AI绘画</a><time datetime="2024-11-20T08:50:23.578Z" title="发表于 2024-11-20 16:50:23">2024-11-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/14932.html" title="Unity Shader-卡通效果">Unity Shader-卡通效果</a><time datetime="2024-11-18T01:21:28.372Z" title="发表于 2024-11-18 09:21:28">2024-11-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16906.html" title="Unity Shader-透明效果">Unity Shader-透明效果</a><time datetime="2024-11-14T09:51:56.446Z" title="发表于 2024-11-14 17:51:56">2024-11-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/44646.html" title="Unity Shader-纹理">Unity Shader-纹理</a><time datetime="2024-11-14T08:54:01.370Z" title="发表于 2024-11-14 16:54:01">2024-11-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/1443.html" title="Unity Shader-法线贴图">Unity Shader-法线贴图</a><time datetime="2024-11-12T01:13:45.870Z" title="发表于 2024-11-12 09:13:45">2024-11-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By sky小天</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div>
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body></html>
